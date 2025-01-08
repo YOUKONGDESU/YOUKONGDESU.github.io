@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>減肥產品創新專案APP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #ff6347;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+        }
+        main {
+            padding: 20px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .button {
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .button:hover {
+            background-color: #e53e3e;
+        }
+        input, select {
+            padding: 10px;
+            margin-top: 5px;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .progress {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 25px;
+            margin-top: 10px;
+            height: 20px;
+        }
+        .progress-bar {
+            height: 100%;
+            width: 0;
+            background-color: #ff6347;
+            border-radius: 25px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>減肥產品創新專案APP</h1>
+    <p>開始您的健康減肥之旅</p>
+</header>
+
+<main>
+    <!-- 目標設定區 -->
+    <div class="section">
+        <h2>設定減肥目標</h2>
+        <label for="goalWeight">目標體重 (kg):</label>
+        <input type="number" id="goalWeight" placeholder="例如: 60">
+        
+        <label for="currentWeight">目前體重 (kg):</label>
+        <input type="number" id="currentWeight" placeholder="例如: 75">
+        
+        <button class="button" onclick="calculateProgress()">設置目標</button>
+    </div>
+
+    <!-- 飲食計劃區 -->
+    <div class="section">
+        <h2>飲食計劃</h2>
+        <label for="mealPlan">選擇飲食計劃:</label>
+        <select id="mealPlan">
+            <option value="低卡">低卡飲食</option>
+            <option value="間歇性禁食">間歇性禁食</option>
+            <option value="地中海飲食">地中海飲食</option>
+        </select>
+        
+        <button class="button" onclick="logMeal()">紀錄飲食</button>
+    </div>
+
+    <!-- 運動計劃區 -->
+    <div class="section">
+        <h2>運動計劃</h2>
+        <label for="exercise">選擇運動類型:</label>
+        <select id="exercise">
+            <option value="跑步">跑步</option>
+            <option value="游泳">游泳</option>
+            <option value="瑜伽">瑜伽</option>
+        </select>
+        
+        <button class="button" onclick="logExercise()">紀錄運動</button>
+    </div>
+
+    <!-- 減肥進度 -->
+    <div class="section">
+        <h2>減肥進度</h2>
+        <div class="progress">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <p id="progressText">目前進度: 0%</p>
+    </div>
+</main>
+
+<script>
+    function calculateProgress() {
+        let currentWeight = parseFloat(document.getElementById("currentWeight").value);
+        let goalWeight = parseFloat(document.getElementById("goalWeight").value);
+        let progress = (currentWeight - goalWeight) / (currentWeight - 50) * 100; // 假設50kg為理想最小體重
+        if (progress < 0) progress = 0;
+        if (progress > 100) progress = 100;
+
+        document.getElementById("progressBar").style.width = progress + "%";
+        document.getElementById("progressText").innerText = "目前進度: " + Math.round(progress) + "%";
+    }
+
+    function logMeal() {
+        let mealPlan = document.getElementById("mealPlan").value;
+        alert("您選擇了 " + mealPlan + " 飲食計劃");
+    }
+
+    function logExercise() {
+        let exercise = document.getElementById("exercise").value;
+        alert("您選擇了 " + exercise + " 運動");
+    }
+</script>
+
+</body>
+</html>

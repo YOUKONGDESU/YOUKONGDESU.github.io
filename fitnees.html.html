@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>減肥產品網頁</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .hero {
+            background: url('hero-image.jpg') no-repeat center center;
+            background-size: cover;
+            height: 300px;
+            text-align: center;
+            color: white;
+            padding: 50px 0;
+        }
+        .hero h2 {
+            font-size: 3em;
+        }
+        .section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .cta-button {
+            background-color: #e74c3c;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .cta-button:hover {
+            background-color: #c0392b;
+        }
+        .testimonials {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .testimonial {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 250px;
+        }
+        .product-overview, .ingredients, .faq, .contact {
+            background-color: #fff;
+            margin-top: 40px;
+        }
+        .product-overview h3, .ingredients h3, .faq h3, .contact h3 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>減肥產品</h1>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>快速健康減重，從今天開始</h2>
+        <a href="#product" class="cta-button">立即購買</a>
+    </section>
+
+    <!-- 產品簡介 -->
+    <section class="section product-overview" id="product">
+        <h3>產品簡介</h3>
+        <p>這款減肥產品採用天然成分，科學配方，能有效幫助您減少體脂，提升新陳代謝。</p>
+        <a href="#buy" class="cta-button">了解更多</a>
+    </section>
+
+    <!-- 產品亮點 -->
+    <section class="section">
+        <h3>產品亮點</h3>
+        <ul>
+            <li>天然成分</li>
+            <li>無副作用</li>
+            <li>科學證實效果</li>
+        </ul>
+    </section>
+
+    <!-- 顧客見證 -->
+    <section class="section testimonials">
+        <h3>顧客見證</h3>
+        <div class="testimonial">
+            <p>“使用這款產品後，我減掉了10公斤，真的很有效！” - 張小姐</p>
+        </div>
+        <div class="testimonial">
+            <p>“減肥不再是難事，這款產品幫我重獲自信！” - 王先生</p>
+        </div>
+    </section>
+
+    <!-- 成分解釋 -->
+    <section class="section ingredients">
+        <h3>關鍵成分</h3>
+        <p>這款產品使用天然植物提取物，如綠茶萃取、膳食纖維等，有助於加速脂肪燃燒，抑制食慾。</p>
+    </section>
+
+    <!-- 常見問題 -->
+    <section class="section faq">
+        <h3>常見問題</h3>
+        <ul>
+            <li>問：這款產品有副作用嗎？<br>答：本產品採用天然成分，無副作用。</li>
+            <li>問：使用多久可以看到效果？<br>答：一般情況下，2週內會有明顯的效果。</li>
+        </ul>
+    </section>
+
+    <!-- 聯繫我們 -->
+    <section class="section contact">
+        <h3>聯繫我們</h3>
+        <p>如有任何問題，請隨時與我們聯繫。</p>
+        <form action="submit_form.php" method="post">
+            <input type="text" name="name" placeholder="您的名字" required><br>
+            <input type="email" name="email" placeholder="您的電子郵件" required><br>
+            <textarea name="message" placeholder="您的留言" required></textarea><br>
+            <input type="submit" value="提交">
+        </form>
+    </section>
+
+    <!-- 產品購買區 -->
+    <section class="section" id="buy">
+        <h3>購買產品</h3>
+        <p>選擇您所需的產品包裝，立即購買，開啟您的減肥之旅！</p>
+        <a href="#" class="cta-button">立即購買</a>
+    </section>
+
+</body>
+</html>
